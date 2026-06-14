@@ -1,0 +1,22 @@
+{
+  "subdomains": [
+    "www.example.com"
+  ],
+  "live_hosts": [
+    {
+      "url": "https://www.example.com",
+      "status": 200,
+      "tech": [
+        "Cloudflare"
+      ],
+      "headers": {},
+      "title": "Example Domain",
+      "host": "www.example.com"
+    }
+  ],
+  "endpoints": [],
+  "secrets_found": [],
+  "historical_urls": [],
+  "total_attack_surface": 1,
+  "timestamp": "2026-06-14T08:13:38.876450+00:00Z"
+}

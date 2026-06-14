@@ -1,0 +1,39 @@
+{
+  "XSS": {
+    "required_status": 200,
+    "payload_match": true,
+    "alert_fired": true
+  },
+  "SSRF": {
+    "required_status": 200,
+    "callback_received": true
+  },
+  "IDOR": {
+    "required_status": 200,
+    "cross_account_data": true
+  },
+  "SQLI": {
+    "required_status": 200,
+    "time_delay_or_error": true
+  },
+  "AUTH_BYPASS": {
+    "required_status": 200,
+    "privileged_data_visible": true
+  },
+  "SUBDOMAIN_TAKEOVER": {
+    "cname_unclaimed": true,
+    "claimable": true
+  },
+  "JWT_ATTACK": {
+    "required_status": 200,
+    "admin_response": true
+  },
+  "GRAPHQL": {
+    "introspection_enabled": true,
+    "unauthorized_mutation": true
+  },
+  "OAUTH_FLAW": {
+    "redirect_uri_misconfigured": true,
+    "token_leak": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "total_runs": 0,
+  "total_findings": 0,
+  "p1_findings": 0,
+  "p2_findings": 0,
+  "total_bounty_earned_usd": 0,
+  "novel_chains_discovered": 0,
+  "tools_in_registry": 0,
+  "tools_auto_discovered_this_month": 0,
+  "average_time_to_finding_hours": 0.0,
+  "false_positive_rate": 0.0,
+  "duplicate_detection_rate": 0.0,
+  "capability_expansion_rate_tools_per_month": 0.0
+}

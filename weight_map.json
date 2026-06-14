@@ -1,0 +1,15 @@
+{
+  "default_weights": {
+    "IDOR": 1.0,
+    "SSRF": 1.0,
+    "RCE_UPLOAD": 1.0,
+    "AUTH_BYPASS": 1.0,
+    "SQLI": 1.0,
+    "XSS": 1.0,
+    "SUBDOMAIN_TAKEOVER": 1.0,
+    "JWT_ATTACK": 1.0,
+    "GRAPHQL": 1.0,
+    "OAUTH_FLAW": 1.0
+  },
+  "endpoint_patterns": {}
+}

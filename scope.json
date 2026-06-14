@@ -1,0 +1,10 @@
+{
+  "target_url": "https://example.com",
+  "in_scope": [
+    "example.com"
+  ],
+  "out_of_scope": [],
+  "special_notes": [
+    "fallback scope \u2014 no scope.json"
+  ]
+}

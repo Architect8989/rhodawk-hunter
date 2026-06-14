@@ -1,0 +1,340 @@
+[
+  {
+    "tool_id": "subfinder",
+    "github_repo": "projectdiscovery/subfinder",
+    "capability_tags": [
+      "recon",
+      "subdomain_enum"
+    ],
+    "install_cmd": "go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest",
+    "invocation_template": "subfinder -d {target} -all -recursive -o {output}",
+    "output_format": "newline_delimited",
+    "verified": true,
+    "stars": 12000
+  },
+  {
+    "tool_id": "amass",
+    "github_repo": "owasp/amass",
+    "capability_tags": [
+      "recon",
+      "subdomain_enum"
+    ],
+    "install_cmd": "go install -v github.com/owasp/amass/v4/...@master",
+    "invocation_template": "amass enum -passive -d {target} -o {output}",
+    "output_format": "newline_delimited",
+    "verified": true,
+    "stars": 13000
+  },
+  {
+    "tool_id": "findomain",
+    "github_repo": "Findomain/Findomain",
+    "capability_tags": [
+      "recon",
+      "subdomain_enum"
+    ],
+    "install_cmd": "wget https://github.com/Findomain/Findomain/releases/download/10.0.1/findomain-linux.zip && ...",
+    "invocation_template": "findomain -t {target} -u {output}",
+    "output_format": "newline_delimited",
+    "verified": true,
+    "stars": 3500
+  },
+  {
+    "tool_id": "dnsx",
+    "github_repo": "projectdiscovery/dnsx",
+    "capability_tags": [
+      "recon",
+      "dns_resolution"
+    ],
+    "install_cmd": "go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest",
+    "invocation_template": "dnsx -l {input_list} -resp -o {output}",
+    "output_format": "json",
+    "verified": true,
+    "stars": 5000
+  },
+  {
+    "tool_id": "httpx",
+    "github_repo": "projectdiscovery/httpx",
+    "capability_tags": [
+      "recon",
+      "live_host_probe"
+    ],
+    "install_cmd": "go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest",
+    "invocation_template": "httpx -l {input_list} -title -tech-detect -status-code -json -follow-redirects -o {output}",
+    "output_format": "jsonl",
+    "verified": true,
+    "stars": 20000
+  },
+  {
+    "tool_id": "naabu",
+    "github_repo": "projectdiscovery/naabu",
+    "capability_tags": [
+      "recon",
+      "port_scan"
+    ],
+    "install_cmd": "go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest",
+    "invocation_template": "naabu -l {input_list} -top-ports 1000 -json -o {output}",
+    "output_format": "jsonl",
+    "verified": true,
+    "stars": 5000
+  },
+  {
+    "tool_id": "katana",
+    "github_repo": "projectdiscovery/katana",
+    "capability_tags": [
+      "recon",
+      "endpoint_crawl"
+    ],
+    "install_cmd": "go install -v github.com/projectdiscovery/katana/cmd/katana@latest",
+    "invocation_template": "katana -l {input_list} -depth 5 -jc -kf all -o {output}",
+    "output_format": "newline_delimited",
+    "verified": true,
+    "stars": 8000
+  },
+  {
+    "tool_id": "gospider",
+    "github_repo": "jaeles-project/gospider",
+    "capability_tags": [
+      "recon",
+      "endpoint_crawl"
+    ],
+    "install_cmd": "go install -v github.com/jaeles-project/gospider@latest",
+    "invocation_template": "gospider -S {input_list} -d 4 -t 20 -o {output}",
+    "output_format": "directory",
+    "verified": true,
+    "stars": 3000
+  },
+  {
+    "tool_id": "gau",
+    "github_repo": "lc/gau",
+    "capability_tags": [
+      "recon",
+      "historical_urls"
+    ],
+    "install_cmd": "go install -v github.com/lc/gau/v2/cmd/gau@latest",
+    "invocation_template": "gau --threads 10 {target} | tee {output}",
+    "output_format": "newline_delimited",
+    "verified": true,
+    "stars": 4000
+  },
+  {
+    "tool_id": "waybackurls",
+    "github_repo": "tomnomnom/waybackurls",
+    "capability_tags": [
+      "recon",
+      "historical_urls"
+    ],
+    "install_cmd": "go install -v github.com/tomnomnom/waybackurls@latest",
+    "invocation_template": "waybackurls {target} | tee {output}",
+    "output_format": "newline_delimited",
+    "verified": true,
+    "stars": 3000
+  },
+  {
+    "tool_id": "jsluice",
+    "github_repo": "BishopFox/jsluice",
+    "capability_tags": [
+      "recon",
+      "js_analysis",
+      "api_extraction"
+    ],
+    "install_cmd": "go install -v github.com/BishopFox/jsluice/cmd/jsluice@latest",
+    "invocation_template": "jsluice urls -R {js_file_list}",
+    "output_format": "newline_delimited",
+    "verified": true,
+    "stars": 2000
+  },
+  {
+    "tool_id": "linkfinder",
+    "github_repo": "GerbenJavado/LinkFinder",
+    "capability_tags": [
+      "recon",
+      "js_analysis",
+      "api_extraction"
+    ],
+    "install_cmd": "pip install linkfinder || git clone and use directly",
+    "invocation_template": "linkfinder -i {js_file} -o cli",
+    "output_format": "cli_output",
+    "verified": true,
+    "stars": 3500
+  },
+  {
+    "tool_id": "trufflehog",
+    "github_repo": "trufflesecurity/trufflehog",
+    "capability_tags": [
+      "recon",
+      "secret_scanning"
+    ],
+    "install_cmd": "go install -v github.com/trufflesecurity/trufflehog@main",
+    "invocation_template": "trufflehog filesystem --directory={dir} --json -o {output}",
+    "output_format": "jsonl",
+    "verified": true,
+    "stars": 15000
+  },
+  {
+    "tool_id": "gitleaks",
+    "github_repo": "gitleaks/gitleaks",
+    "capability_tags": [
+      "recon",
+      "secret_scanning"
+    ],
+    "install_cmd": "go install -v github.com/gitleaks/gitleaks@latest",
+    "invocation_template": "gitleaks detect --source={dir} --report-format json --report-path {output}",
+    "output_format": "json",
+    "verified": true,
+    "stars": 18000
+  },
+  {
+    "tool_id": "arjun",
+    "github_repo": "s0md3v/Arjun",
+    "capability_tags": [
+      "recon",
+      "parameter_discovery"
+    ],
+    "install_cmd": "pip3 install arjun",
+    "invocation_template": "arjun -i {input_list} -m GET,POST -o {output}",
+    "output_format": "json",
+    "verified": true,
+    "stars": 4000
+  },
+  {
+    "tool_id": "dalfox",
+    "github_repo": "hahwul/dalfox",
+    "capability_tags": [
+      "xss",
+      "agent"
+    ],
+    "install_cmd": "go install -v github.com/hahwul/dalfox/v2@latest",
+    "invocation_template": "dalfox pipe < {input} --worker {concurrency} -o {output}",
+    "output_format": "json",
+    "verified": true,
+    "stars": 8000
+  },
+  {
+    "tool_id": "sqlmap",
+    "github_repo": "sqlmapproject/sqlmap",
+    "capability_tags": [
+      "sqli",
+      "agent"
+    ],
+    "install_cmd": "pip install sqlmap or git clone",
+    "invocation_template": "sqlmap -u {url} --batch --level=1 --risk=1 --smart -o {output}",
+    "output_format": "text",
+    "verified": true,
+    "stars": 30000
+  },
+  {
+    "tool_id": "nuclei",
+    "github_repo": "projectdiscovery/nuclei",
+    "capability_tags": [
+      "vuln_scan",
+      "multi_class",
+      "agent"
+    ],
+    "install_cmd": "go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest",
+    "invocation_template": "nuclei -l {input_list} -t {templates} -o {output} -jsonl",
+    "output_format": "jsonl",
+    "verified": true,
+    "stars": 20000
+  },
+  {
+    "tool_id": "subjack",
+    "github_repo": "haccer/subjack",
+    "capability_tags": [
+      "subdomain_takeover",
+      "agent"
+    ],
+    "install_cmd": "go install -v github.com/haccer/subjack@latest",
+    "invocation_template": "subjack -w {wordlist} -t 100 -timeout 30 -o {output} -ssl",
+    "output_format": "text",
+    "verified": true,
+    "stars": 3000
+  },
+  {
+    "tool_id": "jwt_tool",
+    "github_repo": "ticarpi/jwt_tool",
+    "capability_tags": [
+      "jwt_attack",
+      "agent"
+    ],
+    "install_cmd": "git clone https://github.com/ticarpi/jwt_tool.git && chmod +x jwt_tool.py",
+    "invocation_template": "python3 jwt_tool.py {jwt_token} --targeturl={url}",
+    "output_format": "text",
+    "verified": true,
+    "stars": 5000
+  },
+  {
+    "tool_id": "interactsh-client",
+    "github_repo": "projectdiscovery/interactsh",
+    "capability_tags": [
+      "oob_callback",
+      "ssrf_proof"
+    ],
+    "install_cmd": "go install -v github.com/projectdiscovery/interactsh/client/cmd/interactsh-client@latest",
+    "invocation_template": "interactsh-client -o {output}",
+    "output_format": "json",
+    "verified": true,
+    "stars": 5000
+  },
+  {
+    "tool_id": "mitmproxy",
+    "github_repo": "mitmproxy/mitmproxy",
+    "capability_tags": [
+      "traffic_interceptor",
+      "har_export"
+    ],
+    "install_cmd": "pip3 install mitmproxy",
+    "invocation_template": "mitmproxy --mode transparent --save-stream-file {file}",
+    "output_format": "mitm_stream",
+    "verified": true,
+    "stars": 40000
+  },
+  {
+    "tool_id": "ffmpeg",
+    "github_repo": "FFmpeg/FFmpeg",
+    "capability_tags": [
+      "screen_recorder"
+    ],
+    "install_cmd": "apt install ffmpeg",
+    "invocation_template": "ffmpeg -f x11grab -r 30 -s 1920x1080 -i :99 -codec:v libx264 {output}",
+    "output_format": "mp4",
+    "verified": true,
+    "stars": 48000
+  },
+  {
+    "tool_id": "playwright",
+    "github_repo": "microsoft/playwright-python",
+    "capability_tags": [
+      "browser_automation",
+      "js_rendering"
+    ],
+    "install_cmd": "pip3 install playwright && playwright install chromium",
+    "invocation_template": "python3 -c \"from playwright.sync_api import sync_playwright; ...\"",
+    "output_format": "varies",
+    "verified": true,
+    "stars": 12000
+  },
+  {
+    "tool_id": "xvfb",
+    "github_repo": "",
+    "capability_tags": [
+      "virtual_display"
+    ],
+    "install_cmd": "apt install xvfb",
+    "invocation_template": "Xvfb :99 -screen 0 1920x1080x24",
+    "output_format": "none",
+    "verified": true,
+    "stars": 0
+  },
+  {
+    "tool_id": "x11vnc",
+    "github_repo": "LibVNC/x11vnc",
+    "capability_tags": [
+      "vnc_server"
+    ],
+    "install_cmd": "apt install x11vnc",
+    "invocation_template": "x11vnc -display :99 -nopw -listen localhost -xkb",
+    "output_format": "none",
+    "verified": true,
+    "stars": 2000
+  }
+]

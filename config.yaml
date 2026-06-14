@@ -1,0 +1,47 @@
+engine: rhodawk-hunter
+version: "10.0"
+base_dir: /rhodawk
+
+# Resource limits (31GB RAM, 8-core VPS)
+max_workers: 8
+worker_ram_gb: 3
+
+# Phases
+default_phases:
+  - 0  # Audit
+  - 1  # Scope parse
+  - 2  # Loadout
+  - 4  # Recon
+  - 5  # Priority queue
+  - 6  # Agent pool
+  - 7  # Research
+  - 8  # Novel chains
+  - 9  # Validation gates
+  - 10 # Proof recording
+  - 11 # Report generation
+  - 12 # Learning loop
+
+# Tool paths (self-discovered by node_registry.json)
+tool_dir: /usr/local/bin
+go_bin: /root/go/bin
+
+# Output structure
+recon_dir: /rhodawk/recon
+agents_dir: /rhodawk/agents
+findings_dir: /rhodawk/findings
+research_dir: /rhodawk/research
+
+# Gate criteria
+severity_threshold: P2  # Only P1/P2 accepted
+duplicate_window_days: 30
+min_cvss_score: 7.0
+
+# Proof recording
+proof_max_duration_sec: 120
+vnc_enabled: true
+vnc_password: hunter_vnc_2024
+
+# Learning
+weight_update_alpha: 0.1  # EMA smoothing for chain weights
+false_positive_penalty: 0.5  # Weight decrement on FP
+chain_promotion_threshold: 0.85  # Promote chain to active library
